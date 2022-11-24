@@ -19,46 +19,45 @@ namespace RPG.Control
 
         private void Update()
         {
-            InteractWithCombat();
-            InteractWithMovement();
+            if(InteractWithCombat()) { return; }
+            if(InteractWithMovement()) { return; }
+            print("Nothing to do.");
         }
 
 
-        private void InteractWithCombat()
+        private bool InteractWithCombat()
         {
-            if(Input.GetMouseButtonDown(0))
-            {
-                RaycastHit[] hits =  Physics.RaycastAll(GetMouseRay());
+            RaycastHit[] hits =  Physics.RaycastAll(GetMouseRay());
 
-                foreach(RaycastHit hit in hits)
+            foreach(RaycastHit hit in hits)
+            {
+                CombatTarget target = hit.transform.GetComponent<CombatTarget>();
+                if(target == null) { continue; }
+                
+                if(Input.GetMouseButtonDown(0))
                 {
-                    CombatTarget target = hit.transform.GetComponent<CombatTarget>();
-                    if(target != null)
-                    {
-                        fighter.Attack(target);
-                    }
+                    float distance = Vector3.Distance(target.transform.position, transform.position);
+                    fighter.Attack(target);
                 }
+                return true;
             }
+            return false;
         }
 
 
-        private void InteractWithMovement()
-        {
-            if (Input.GetMouseButton(0))
-            {
-                MoveToCursor();
-            }
-        }
-
-
-        public void MoveToCursor()
+        private bool InteractWithMovement()
         {
             RaycastHit hit;
             bool hasHit = Physics.Raycast(GetMouseRay(), out hit);
             if(hasHit)
             {
-                mover.MoveTo(hit.point);
+                if (Input.GetMouseButton(0))
+                {
+                    mover.MoveTo(hit.point);
+                }
+                return true;
             }
+            return false;
         }
 
         private Ray GetMouseRay()

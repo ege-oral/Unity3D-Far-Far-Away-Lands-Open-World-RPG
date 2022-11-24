@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 631770855}
   - component: {fileID: 631770854}
   - component: {fileID: 631770853}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1270,30 +1270,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8485591321180045156, guid: 60810a04e9ec1c843b00f889333a33ca, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8485591321180045156, guid: 60810a04e9ec1c843b00f889333a33ca, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9659258
-      objectReference: {fileID: 0}
-    - target: {fileID: 8485591321180045156, guid: 60810a04e9ec1c843b00f889333a33ca, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.2588191
-      objectReference: {fileID: 0}
-    - target: {fileID: 8485591321180045156, guid: 60810a04e9ec1c843b00f889333a33ca, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8485591321180045156, guid: 60810a04e9ec1c843b00f889333a33ca, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8485591321180045156, guid: 60810a04e9ec1c843b00f889333a33ca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 30
-      objectReference: {fileID: 0}
     - target: {fileID: 8485591322193337655, guid: 60810a04e9ec1c843b00f889333a33ca, type: 3}
       propertyPath: m_Name
       value: FollowCamera
